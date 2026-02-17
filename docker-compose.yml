@@ -1,6 +1,6 @@
 services:
   backend:
-    image: ghcr.io/${GHCR_USER}/obrador-backend:latest
+    image: ghcr.io/${GHCR_USER}/obradoria-backend:latest
     restart: unless-stopped
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://${DB_HOST}:${DB_PORT:-5432}/${DB_NAME:-obradoria}
