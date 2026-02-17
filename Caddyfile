@@ -1,0 +1,16 @@
+api.obradoria.com.br {
+    handle /api/* {
+        reverse_proxy backend:8891
+    }
+
+    handle /agent/* {
+        uri strip_prefix /agent
+        reverse_proxy agent:8000 {
+            flush_interval -1
+        }
+    }
+
+    handle /health {
+        respond "OK" 200
+    }
+}
